@@ -156,6 +156,16 @@ else:
             labels={'mins': 'Mins', 'efforts': f'Efforts'}
         )
 
+        x_max_1 = filtered_df['mins'].max()
+
+        # Add y = x line
+        fig1.add_shape(
+            type="line",
+            x0=0, y0=0,
+            x1=x_max_1, y1=x_max_1,
+            line=dict(color="black", dash="dash"),
+        )
+
         # Update the layout
         fig1.update_layout(
             height=600,
@@ -183,6 +193,16 @@ else:
             size_max=15  # Maximum marker size
         )
 
+        x_max_2 = player_season_stats['totalMins'].max()
+
+        # Add y = x line
+        fig2.add_shape(
+            type="line",
+            x0=0, y0=0,
+            x1=x_max_2, y1=x_max_2,
+            line=dict(color="black", dash="dash"),
+        )
+
         # Update the layout
         fig2.update_layout(
             height=600,
@@ -208,6 +228,16 @@ else:
             labels={'totalMins': 'Total Minutes Played', 'efforts_per_min': f'Efforts per Minute'},
             size='gamesPlayed',  # Size points by games played
             size_max=15  # Maximum marker size
+        )
+
+        x_max_3 = player_season_stats['totalMins'].max()
+
+        # Add y = x line
+        fig3.add_shape(
+            type="line",
+            x0=0, y0=1,
+            x1=x_max_3, y1=1,
+            line=dict(color="black", dash="dash"),
         )
 
         # Update the layout
